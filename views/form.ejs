@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            /* display: block; */
+            margin-bottom: 4px;
+        }
+
+        input {
+            /* width: 100%; */
+            padding: 3px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Record Update</h1>
+    <% result.forEach(function(res){%>
+    <form action="/up" method="post">
+
+        <label for="rollno">Student Roll No:</label>
+        <input type="text" id="rollno" value="<%=res.rno%> " name="rno" readonly><br><br>
+
+        <label for="sname">Student Name  :&nbsp;&nbsp; </label>
+        <input type="text" id="sname" value="<%=res.name%> " name="name" required><br><br>
+
+        <label for="s1">Subject 1 Marks :</label>
+        <input type="text" id="s1" value="<%=res.s1%> " name="s1" required><br><br>
+
+        <label for="s2">Subject 2 Marks :</label>
+        <input type="text" id="s2" value="<%=res.s2%> " name="s2" required><br><br>
+
+        <label for="s3">Subject 3 Marks :</label>
+        <input type="text" id="s3" value="<%=res.s3%> " name="s3" required><br><br>
+
+        <label for="s4">Subject 4 Marks :</label>
+        <input type="text" id="s4" value="<%=res.s4%> " name="s4" required><br><br>
+
+        <label for="s5">Subject 5 Marks :</label>
+        <input type="text" id="s5" value="<%=res.s5%> " name="s5" required><br><br>
+
+        <input type="submit" class="button" value="Update" name="submit">
+        
+    </form>
+    <%})%>
+</body>
+</html>
